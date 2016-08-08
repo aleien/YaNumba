@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import javax.inject.Inject;
 
+import io.yanamba.aleien.yanumba.ui.App;
 import io.yanamba.aleien.yanumba.utils.WindowManagerUtils;
 
 public class CallsMonitoringService extends Service {

@@ -1,22 +1,17 @@
 package io.yanamba.aleien.yanumba.di;
 
-import android.app.Application;
 import android.content.Context;
 
-import java.io.IOException;
-
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import io.yanamba.aleien.yanumba.App;
+import io.yanamba.aleien.yanumba.ui.App;
 import io.yanamba.aleien.yanumba.SearchApi;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 

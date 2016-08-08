@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import javax.inject.Inject;
 
-import io.yanamba.aleien.yanumba.App;
 import io.yanamba.aleien.yanumba.R;
 
 import static android.content.Context.WINDOW_SERVICE;

@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba;
+package io.yanamba.aleien.yanumba.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
+import io.yanamba.aleien.yanumba.CallsMonitoringService;
+import io.yanamba.aleien.yanumba.R;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
 import timber.log.Timber;
 
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((App)getApplication()).component().inject(this);
+        ((App) getApplication()).component().inject(this);
         setContentView(R.layout.activity_main);
 
         checkForService();
@@ -43,10 +45,13 @@ public class MainActivity extends AppCompatActivity {
 
     @OnCheckedChanged(R.id.toggleButton)
     public void startService(boolean checked) {
-        if (!helper.isMyServiceRunning(CallsMonitoringService.class)) {
-            Intent service = new Intent(this, CallsMonitoringService.class);
-            if (checked) startService(service);
-            else stopService(service);
+        Intent service = new Intent(this, CallsMonitoringService.class);
+        if (checked) {
+            if (!helper.isMyServiceRunning(CallsMonitoringService.class)) {
+                startService(service);
+            }
+        } else {
+            stopService(service);
         }
     }
 

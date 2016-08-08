@@ -4,7 +4,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 import io.yanamba.aleien.yanumba.CallsMonitoringService;
-import io.yanamba.aleien.yanumba.MainActivity;
+import io.yanamba.aleien.yanumba.ui.MainActivity;
 import io.yanamba.aleien.yanumba.utils.WindowManagerUtils;
 
 /**
