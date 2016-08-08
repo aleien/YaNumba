@@ -6,8 +6,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import io.yanamba.aleien.yanumba.ui.App;
-import io.yanamba.aleien.yanumba.SearchApi;
+import io.yanamba.aleien.yanumba.android.App;
+import io.yanamba.aleien.yanumba.search.SearchApi;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;

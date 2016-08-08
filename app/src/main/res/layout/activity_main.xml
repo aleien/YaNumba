@@ -5,7 +5,7 @@
                                              android:id="@+id/activity_main"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context="io.yanamba.aleien.yanumba.ui.MainActivity">
+                                             tools:context="io.yanamba.aleien.yanumba.android.MainActivity">
 
     <ToggleButton
         android:id="@+id/toggleButton"

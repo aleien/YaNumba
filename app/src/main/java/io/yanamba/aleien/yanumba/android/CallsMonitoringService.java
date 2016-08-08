@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba;
+package io.yanamba.aleien.yanumba.android;
 
 import android.app.Service;
 import android.content.Intent;
@@ -9,20 +9,20 @@ import android.widget.TextView;
 
 import javax.inject.Inject;
 
-import io.yanamba.aleien.yanumba.ui.App;
-import io.yanamba.aleien.yanumba.utils.WindowManagerUtils;
+import io.yanamba.aleien.yanumba.search.Searcher;
+import io.yanamba.aleien.yanumba.utils.WindowManagerHelper;
 
 public class CallsMonitoringService extends Service {
     private TextView searchResultsWindow;
     @Inject Searcher searcher;
-    @Inject WindowManagerUtils windowHelper;
+    @Inject WindowManagerHelper windowHelper;
 
     @Override
     public void onCreate() {
         super.onCreate();
         ((App) getApplication()).component().inject(this);
         searchResultsWindow = windowHelper.createResultsView(this);
-        WindowManagerUtils.setupWindow(searchResultsWindow);
+        WindowManagerHelper.setupWindow(searchResultsWindow);
 
         TelephonyManager tim = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         tim.listen(new PhoneStateListener(), PhoneStateListener.LISTEN_CALL_STATE);

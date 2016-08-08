@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba.ui;
+package io.yanamba.aleien.yanumba.android;
 
 import android.content.Intent;
 import android.widget.ToggleButton;
@@ -9,21 +9,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.Shadows;
 import org.robolectric.annotation.Config;
-import org.robolectric.internal.Shadow;
 import org.robolectric.util.ActivityController;
 
 import io.yanamba.aleien.yanumba.BuildConfig;
-import io.yanamba.aleien.yanumba.CallsMonitoringService;
 import io.yanamba.aleien.yanumba.R;
 import io.yanamba.aleien.yanumba.di.TestModule;
-import io.yanamba.aleien.yanumba.ui.MainActivity;
-import io.yanamba.aleien.yanumba.utils.HelperUtils;
 
 import static junit.framework.Assert.assertTrue;
 

@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba.ui;
+package io.yanamba.aleien.yanumba.android;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
-import io.yanamba.aleien.yanumba.CallsMonitoringService;
 import io.yanamba.aleien.yanumba.R;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
 import timber.log.Timber;

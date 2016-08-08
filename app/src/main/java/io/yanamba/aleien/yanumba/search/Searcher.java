@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba;
+package io.yanamba.aleien.yanumba.search;
 
 import org.jsoup.Jsoup;
 

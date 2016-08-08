@@ -6,8 +6,8 @@ import org.mockito.Mockito;
 
 import dagger.Module;
 import dagger.Provides;
-import io.yanamba.aleien.yanumba.CallsMonitoringService;
-import io.yanamba.aleien.yanumba.ui.App;
+import io.yanamba.aleien.yanumba.android.CallsMonitoringService;
+import io.yanamba.aleien.yanumba.android.App;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
 
 @Module

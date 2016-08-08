@@ -24,11 +24,11 @@ import static android.content.Context.WINDOW_SERVICE;
 import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
 
-public final class WindowManagerUtils {
+public final class WindowManagerHelper {
     private HelperUtils helperUtils;
 
     @Inject
-    public WindowManagerUtils(HelperUtils helperUtils) {
+    public WindowManagerHelper(HelperUtils helperUtils) {
         this.helperUtils = helperUtils;
     }
 

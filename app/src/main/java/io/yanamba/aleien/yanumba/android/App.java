@@ -1,4 +1,4 @@
-package io.yanamba.aleien.yanumba.ui;
+package io.yanamba.aleien.yanumba.android;
 
 import android.app.Application;
 import android.support.annotation.NonNull;

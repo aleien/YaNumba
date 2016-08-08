@@ -5,8 +5,6 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.res.Resources;
 
-import javax.inject.Inject;
-
 import static io.yanamba.aleien.yanumba.di.AppModule.SEARCH_QUERY;
 import static io.yanamba.aleien.yanumba.di.AppModule.YANDEX_BASE_URL;
 
