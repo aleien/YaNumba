@@ -16,7 +16,7 @@ import timber.log.Timber;
 
 // Главная и единственная активити приложения. Отвечает за включение / выключение сервиса
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.toggleButton)
+    @BindView(R.id.toggle_service)
     ToggleButton toggleButton;
 
     @Inject HelperUtils helper;
@@ -31,18 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         Timber.plant(new Timber.DebugTree());
-
     }
 
     private void checkForService() {
         if (helper.isMyServiceRunning(CallsMonitoringService.class)) {
-            ToggleButton button = (ToggleButton) findViewById(R.id.toggleButton);
+            ToggleButton button = (ToggleButton) findViewById(R.id.toggle_service);
             assert button != null;
             button.setChecked(true);
         }
     }
 
-    @OnCheckedChanged(R.id.toggleButton)
+    @OnCheckedChanged(R.id.toggle_service)
     public void startService(boolean checked) {
         Intent service = new Intent(this, CallsMonitoringService.class);
         if (checked) {

@@ -8,7 +8,7 @@
                                              tools:context="io.yanamba.aleien.yanumba.android.MainActivity">
 
     <ToggleButton
-        android:id="@+id/toggleButton"
+        android:id="@+id/toggle_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/activity_main"/>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/toggle_service_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -28,9 +28,11 @@
         android:layout_marginStart="16dp"
         android:text="Activate service"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintRight_toLeftOf="@+id/toggleButton"
+        app:layout_constraintRight_toLeftOf="@+id/toggle_service"
         app:layout_constraintHorizontal_bias="0.66"
-        app:layout_constraintTop_toTopOf="@+id/toggleButton"
-        app:layout_constraintBottom_toBottomOf="@+id/toggleButton"/>
+        app:layout_constraintTop_toTopOf="@+id/toggle_service"
+        app:layout_constraintBottom_toBottomOf="@+id/toggle_service"/>
+
+    <!-- TODO: History? -->
 
 </android.support.constraint.ConstraintLayout>

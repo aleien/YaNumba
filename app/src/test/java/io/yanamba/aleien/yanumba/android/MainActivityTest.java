@@ -43,7 +43,7 @@ public class MainActivityTest {
     public void startingActivity() {
         // if my service is not running toggle button is unchecked
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
 
         assertTrue(!button.isChecked());
     }
@@ -53,7 +53,7 @@ public class MainActivityTest {
         // if service up toggle button checked
         TestModule.serviceRunning = true;
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
 
         assertTrue(button.isChecked());
     }
@@ -63,7 +63,7 @@ public class MainActivityTest {
         // standard situation
         TestModule.serviceRunning = false;
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
         button.setChecked(true);
         Intent service = new Intent(activity, CallsMonitoringService.class);
 
@@ -75,7 +75,7 @@ public class MainActivityTest {
         // don't start service
         TestModule.serviceRunning = true;
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
         button.setChecked(true);
 
         Assert.assertEquals(Shadows.shadowOf(RuntimeEnvironment.application).peekNextStartedService(), null);
@@ -88,7 +88,7 @@ public class MainActivityTest {
         Intent service = new Intent(RuntimeEnvironment.application, CallsMonitoringService.class);
         RuntimeEnvironment.application.startService(service);
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
         button.setChecked(false);
 
         Assert.assertEquals(Shadows.shadowOf(RuntimeEnvironment.application).getNextStoppedService().getComponent(), service.getComponent());
@@ -99,7 +99,7 @@ public class MainActivityTest {
         // don't crash
         TestModule.serviceRunning = false;
         MainActivity activity = controller.create().get();
-        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggleButton);
+        ToggleButton button = (ToggleButton) activity.findViewById(R.id.toggle_service);
         button.setChecked(false);
 
         Assert.assertEquals(Shadows.shadowOf(RuntimeEnvironment.application).getNextStoppedService(), null);

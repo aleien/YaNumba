@@ -24,17 +24,18 @@ import static android.content.Context.WINDOW_SERVICE;
 import static android.view.WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 import static android.view.WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED;
 
-public final class WindowManagerHelper {
+public class WindowManagerHelper {
     private HelperUtils helperUtils;
 
-    @Inject
+//    @Inject
     public WindowManagerHelper(HelperUtils helperUtils) {
         this.helperUtils = helperUtils;
     }
 
-    public static void setupWindow(View window) {
+    public void setupWindow(View window) {
         Context context = window.getContext();
         WindowManager wm = (WindowManager) context.getSystemService(WINDOW_SERVICE);
+        window.setVisibility(View.GONE);
         wm.addView(window, generateWindowManagerParams());
 
         window.setOnTouchListener((v, ev) -> {
@@ -113,10 +114,10 @@ public final class WindowManagerHelper {
         return window;
     }
 
-    public static WindowManager.LayoutParams generateWindowManagerParams() {
+    public WindowManager.LayoutParams generateWindowManagerParams() {
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                (int) Resources.getSystem().getDisplayMetrics().density * 400,
-                (int) Resources.getSystem().getDisplayMetrics().density * 300,
+                (int) Resources.getSystem().getDisplayMetrics().density * 200,
+                (int) Resources.getSystem().getDisplayMetrics().density * 150,
                 WindowManager.LayoutParams.TYPE_SYSTEM_ERROR,
                 WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
                         | FLAG_SHOW_WHEN_LOCKED

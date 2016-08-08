@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YaNumba</string>
+    <string name="error_message">Ой! \nКажется, нас забанили в Яндексе. Попробуйте использовать прокси (;</string>
+    <string name="calling_message">Вам звонят!\n</string>
 </resources>

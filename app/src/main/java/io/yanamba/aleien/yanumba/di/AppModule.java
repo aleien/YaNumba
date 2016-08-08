@@ -1,6 +1,7 @@
 package io.yanamba.aleien.yanumba.di;
 
 import android.content.Context;
+import android.widget.TextView;
 
 import javax.inject.Singleton;
 
@@ -9,6 +10,7 @@ import dagger.Provides;
 import io.yanamba.aleien.yanumba.android.App;
 import io.yanamba.aleien.yanumba.search.SearchApi;
 import io.yanamba.aleien.yanumba.utils.HelperUtils;
+import io.yanamba.aleien.yanumba.utils.WindowManagerHelper;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -41,7 +43,7 @@ public class AppModule {
     public OkHttpClient provideOkHttpClient(Interceptor userAgent) {
         return new OkHttpClient.Builder()
                 .addInterceptor(new HttpLoggingInterceptor())
-//                .addInterceptor(userAgent)
+                .addInterceptor(userAgent)
                 .build();
     }
 
@@ -75,5 +77,10 @@ public class AppModule {
     @Provides
     public HelperUtils provideUtils(Context context) {
         return new HelperUtils(context);
+    }
+
+    @Provides
+    public WindowManagerHelper provideWindowManagerHelper(HelperUtils helperUtils) {
+        return new WindowManagerHelper(helperUtils);
     }
 }
